@@ -12,15 +12,4 @@ export default function SearchResults({ params }) {
             ? <i>Cargando...</i>
             : <ListOfGifs gifs={gifs} />
     }</React.Fragment>
-
-    /*
-    gifs.map(({id, title, url}) => 
-      <Gif
-        key={id}
-        id={id}
-        title={title}
-        url={url}
-      />
-    )
-    */
 }

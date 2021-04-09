@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import getGifs from '../services/getGifs'
+import GifsContext from '../context/GifsContext'
 
 /*
     Los hooks son la forma correcta de aislar la logica para mejorar
@@ -10,9 +11,9 @@ import getGifs from '../services/getGifs'
 */
 
 export function useGifs({ keyword } = { keyword: null }) {
-    const [gifs, setGifs] = useState([])
+    // const [gifs, setGifs] = useState([])
+    const {gifs, setGifs} = useContext(GifsContext) //Estado global
     const [isLoading, setIsLoading] = useState(false)
-
     //useEffect se va a ejecutar cada vez que se renderice el componente
     //Lo usamos para hacer el llamdo a la api antes de renderizar
     useEffect(() => {
@@ -27,7 +28,7 @@ export function useGifs({ keyword } = { keyword: null }) {
                 //Guardamos la keyword en el localStorage
                 localStorage.setItem('lastKeyword', keywordToUse)
             })
-    }, [keyword])
+    }, [keyword, setGifs])
 
     /*
         El segundo parametro de useEffect es un array que por defecto puede estar vacio
@@ -37,6 +38,8 @@ export function useGifs({ keyword } = { keyword: null }) {
         dependencia. Lo que nos permite mantener actualizado correctamente el estado de
         nuestro componente
     */
+
+    
 
     return { gifs, isLoading }
 }
