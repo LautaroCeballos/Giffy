@@ -1,0 +1,30 @@
+:root{
+    --results-columns: 2;
+}
+
+.ListOfGifs {
+    column-count: var(--results-columns);
+    column-gap: .5em;
+}
+
+.ListOfGifs-item{ /* Cuidado con la compatibilidad entre versiones antiguas*/
+    -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera*/
+    page-break-inside: avoid; /* Firefox */
+    break-inside: avoid; /* IE 10+ */
+
+    background-color: #616772;
+    display: inline-block;
+    width: 100%;
+}
+
+@media (min-width: 600px){
+    :root{
+        --results-columns: 3;
+    }
+}
+
+@media (min-width: 800px){
+    :root{
+        --results-columns: 4;
+    }
+}

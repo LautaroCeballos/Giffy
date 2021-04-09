@@ -1,0 +1,41 @@
+h2{
+    text-align: left;
+}
+
+ul{
+    list-style: none;
+    text-align: left;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+
+input{
+    box-sizing: border-box;
+    padding: 5px 10px;
+    height: 100%;
+    border-radius: 5px 0px 0px 5px;
+    border-style: none;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-style: none;
+    border-radius: 0 5px 5px 0;
+    height: 100%;
+    padding: 5px 10px;
+    font-size: medium;
+    background-color: cadetblue;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(141, 225, 228);
+}
+
