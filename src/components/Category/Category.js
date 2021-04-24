@@ -6,8 +6,7 @@ export default function Category({ name, options }) {
     const itemStyles = "inline-block m-1 px-2 py-1 text-white hover:scale-50"
     
     const colors = ['red', 'green', 'yellow', 'blue', 'purple', 'pink']
-
-    function randomColor(colors){
+    const randomColor = colors => {
         const random = Math.floor(Math.random() * colors.length)
         const selectedColor = colors[random]
         const color = 'bg-' + selectedColor + '-600'

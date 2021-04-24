@@ -10,7 +10,7 @@ function Gif({ title, id, url }) {
 
     return (
         <Link
-            to={`gif/${id}`}
+            to={`/gif/${id}`}
             className={gifStyles}
         >
             <img
